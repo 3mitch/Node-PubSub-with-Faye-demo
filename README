@@ -18,3 +18,18 @@ Requires Express and Faye
 
 npm install express
 npm install faye
+
+
+Once installed, run node server.js to start the server on port 8000
+
+In a browser open localhost:8000/client.html
+In a terminal, run one of the following…
+
+post to server with json:
+curl -X POST -H "Content-Type:application/json" -d '{"message": "hello pub sub dudes"}' http://localhost:8000/message
+
+
+post to server with form data:
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d 'message=hello pub sub dudes via html form' http://localhost:8000/messsage
+
+
