@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>PubSub with Faye</title>
+    </head>
+    <body>
+        <h3>PubSub with Faye</h3>
+        <div id="messages"></div>
+        
+        <script src="/jquery-1.4.4.min.js"></script>
+        <script src="/faye.js"></script>
+        
+        <script type="text/javascript">
+            var client = new Faye.Client('/faye', {
+                timeout: 120
+            });
+            
+            client.subscribe('/channel', function(message){
+                $("div#messages").append("<p>" + message.text + "</p>");
+            });
+        </script>
+        
+        
+    </body>
+</html>
+<!--
+curl -X POST -H "Content-Type:application/json" -d '{"message":"hello node"}' http://localhost:8000/message 
+
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d 'message=hello node form post' http://localhost:8000/message 
+-->
