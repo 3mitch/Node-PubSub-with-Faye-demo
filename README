@@ -1,5 +1,11 @@
 Demo app built from http://www.youtube.com/watch?v=WHtwsH1DUnc
 
+Updated and tested code to work with these dependencies:
+Node: 0.4.5
+NPM: 0.3.18
+Express: 2.2.2
+Faye: 0.5.5
+
 Requires Node and NPM
 
 echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
@@ -13,9 +19,7 @@ make install # ok, fine, this step probably takes more than 30 seconds...
 curl http://npmjs.org/install.sh | sh
 
 
-
 Requires Express and Faye
-
 npm install express
 npm install faye
 
@@ -30,6 +34,4 @@ curl -X POST -H "Content-Type:application/json" -d '{"message": "hello pub sub d
 
 
 post to server with form data:
-curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d 'message=hello pub sub dudes via html form' http://localhost:8000/messsage
-
-
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d 'message=hello form' http://localhost:8000/message
